@@ -15,7 +15,6 @@
     "aes256": "^1.1.0",
     "core-js": "^3.6.5",
     "hashstorage-cli": "^1.2.0",
-    "node-sass": "^7.0.1",
     "sass": "^1.49.9",
     "sass-loader": "^10",
     "vue": "^2.6.11"
