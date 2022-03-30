@@ -1,0 +1,83 @@
+@import './variables.scss';
+
+.hidden {
+  display: none !important;
+}
+
+.text-muted {
+  color: $color-muted;
+}
+
+a {
+  color: $color-link;
+
+  &:hover {
+    color: darken($color-link, 15%);
+    text-decoration: underline;
+  }
+}
+
+button {
+  border: none;
+  font-size: 1.125rem;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+
+  &.btn-small {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  &.primary {
+    background-color: $color-primary;
+    color: white;
+
+    &:hover {
+      background-color: lighten($color-primary, 2%);
+    }
+
+    &:active {
+      background-color: lighten($color-primary, 5%);
+    }
+  }
+
+  &.secondary {
+    background-color: $color-secondary;
+    color: black;
+
+    &:hover {
+      background-color: lighten($color-secondary, 2%);
+    }
+
+    &:active {
+      background-color: lighten($color-secondary, 5%);
+    }
+  }
+
+  &.danger {
+    background-color: $color-danger;
+    color: white;
+
+    &:hover {
+      background-color: lighten($color-danger, 2%);
+    }
+
+    &:active {
+      background-color: lighten($color-danger, 5%);
+    }
+  }
+
+  &.success {
+    background-color: $color-success;
+    color: white;
+
+    &:hover {
+      background-color: lighten($color-success, 2%);
+    }
+
+    &:active {
+      background-color: lighten($color-success, 5%);
+    }
+  }
+}
