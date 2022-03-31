@@ -194,7 +194,7 @@
 <style lang="scss" scoped>
   .pwd-editor {
     .content {
-      padding: 1rem;
+      padding: 2rem;
       width: min(100vw - 2rem, 512px);
 
       input {

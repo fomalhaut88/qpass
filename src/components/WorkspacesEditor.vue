@@ -162,7 +162,7 @@
 <style lang="scss" scoped>
   .content {
     width: min(100vw - 2rem, 512px);
-    padding: 1rem;
+    padding: 2rem;
     text-align: center;
 
     h2 {
@@ -208,7 +208,7 @@
 
   .content-edit {
     width: min(100vw - 2rem, 384px);
-    padding: 1rem;
+    padding: 2rem;
     text-align: center;
 
     h2 {

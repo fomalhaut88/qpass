@@ -94,6 +94,7 @@
 
       display: inline-block;
       background-color: white;
+      border-radius: 4px;
       color: black;
       z-index: 2;
       cursor: default;

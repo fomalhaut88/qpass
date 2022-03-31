@@ -35,6 +35,8 @@
         <a href="https://fomalhaut.su/" target="blank">https://fomalhaut.su/</a>
       </p>
 
+      <br>
+
       <button class="primary" @click="$refs['refAboutModal'].hide()">OK</button>
     </div>
   </Modal>
@@ -58,7 +60,7 @@
 <style lang="scss" scoped>
   .about {
     div {
-      padding: 1rem;
+      padding: 2rem;
       width: calc(min(100vw - 2rem, 768px));
       text-align: justify;
 

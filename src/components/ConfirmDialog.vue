@@ -49,7 +49,7 @@
 <style lang="scss" scoped>
   .confirm-dialog {
     .content {
-      padding: 1rem;
+      padding: 2rem;
       text-align: center;
       width: min(256px, 100vw);
 

@@ -97,7 +97,7 @@
 
 <style lang="scss" scoped>
   .content-login {
-    padding: 1rem;
+    padding: 2rem;
     text-align: center;
     width: min(100vw, 512px);
 
@@ -126,7 +126,7 @@
   }
 
   .content-registration {
-    padding: 1rem;
+    padding: 2rem;
     text-align: center;
     width: min(100vw, 384px);
 
