@@ -10,26 +10,29 @@
 
         <div class="field" v-for="(field, idx) in fields" :key="idx">
           <div class="field-key">
-            <font-awesome-icon icon="fas fa-edit" class="text-muted" fixed-width @click="copyToClipboard(field.key)" />
-            &nbsp;
-            <input type="text" placeholder="Field" v-model="field.key" @keyup.stop="editFieldChanged(idx)" ref="refFieldKey">
+            <input type="text" placeholder="Field" v-model="field.key"
+                   @blur="editFieldBlurred(idx)" ref="refFieldKey">
           </div>
           <div class="field-value">
-            <font-awesome-icon icon="fas fa-edit" class="text-muted" fixed-width @click="copyToClipboard(field.value)" />
-            &nbsp;
             <input :type="field.hidden ? 'password' : 'text'"
                    placeholder="Value" v-model="field.value"
                    autocomplete="off">
             &nbsp;
             <font-awesome-icon :icon="['fas', field.hidden ? 'fa-eye-slash' : 'fa-eye']"
-                               class="text-muted"
+                               class="eye-icon"
                                fixed-width size="1x" @click="toggleHidden(field)" />
+            &nbsp;
+            <font-awesome-icon icon="far fa-clone"
+                               class="copy-icon"
+                               fixed-width
+                               @click="copyToClipboard(field.value)" />
           </div>
         </div>
 
         <div class="field">
           <div class="field-key">
-            <input type="text" placeholder="+ Field" v-model="addFieldModel" @keyup.stop="addFieldChanged()">
+            <input type="text" placeholder="+ Field" v-model="addFieldModel"
+                   @keyup.stop="addFieldChanged()">
           </div>
           <div class="field-value">
           </div>
@@ -138,7 +141,7 @@
         }
       },
 
-      editFieldChanged(idx) {
+      editFieldBlurred(idx) {
         if (this.fields[idx].key == "") {
           this.fields.splice(idx, 1)
           if (idx < this.fields.length) {
@@ -237,6 +240,20 @@
           &:focus {
             outline: 2px solid $color-muted;
           }
+        }
+
+        .copy-icon {
+          color: $color-muted;
+          cursor: pointer;
+
+          &:active {
+            color: black;
+          }
+        }
+
+        .eye-icon {
+          color: $color-muted;
+          cursor: pointer;
         }
       }
 
