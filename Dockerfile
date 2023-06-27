@@ -1,23 +1,12 @@
-# Base image
-FROM node:15
+FROM node:18-slim as build-stage
 
-# Set working directory
 WORKDIR /app
-
-RUN apt-get update
-
-# Copy package.json
-COPY package.json .
-COPY package-lock.json .
-
-# Install dependencies
+COPY package*.json ./
 RUN npm install
-
-# Copy files
 COPY . .
+RUN npm run build
 
-# Open port 8080
-EXPOSE 8080
-
-# Run server
-CMD ["npm", "run", "serve"]
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
